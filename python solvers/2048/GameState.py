@@ -9,7 +9,6 @@ whitespace to test committing through egit
 from Directions import *
 import random
 from random import randrange
-from unittest.test.testmock.testmock import Something
 from _overlapped import NULL
 
 class GameState(object):
