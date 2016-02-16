@@ -4,7 +4,6 @@ Created on Feb 6, 2016
 @author: John_2
 '''
 
-from _overlapped import NULL
 from GameState import GameState
 from random import randint
 from Directions import *

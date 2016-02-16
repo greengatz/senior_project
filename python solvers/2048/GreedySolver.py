@@ -4,7 +4,6 @@ Created on Feb 1, 2016
 @author: John_2
 '''
 
-from _overlapped import NULL
 from GameState import GameState
 from random import randint
 from Directions import *
@@ -28,7 +27,7 @@ class GreedySolver(object):
             testBoard = self.game.copyArr()
             #self.game.printState(testBoard)
             
-            bestOption = NULL
+            bestOption = None
             bestValue = -1
             
             #down test

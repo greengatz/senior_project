@@ -9,7 +9,6 @@ whitespace to test committing through egit
 from Directions import *
 import random
 from random import randrange
-from _overlapped import NULL
 
 class GameState(object):
     '''
@@ -149,8 +148,8 @@ class GameState(object):
         return board
     
     'moves the tiles based on the chosen move'
-    def executeMove (self, move, board=NULL):
-        if (board == NULL):
+    def executeMove (self, move, board=None):
+        if (board == None):
             board = self.copyArr()
         
         board = self.preRotate(move, board)
@@ -167,8 +166,8 @@ class GameState(object):
     
     
     'TODO rename x and y'
-    def printState(self, board = NULL):
-        if (board == NULL):
+    def printState(self, board = None):
+        if (board == None):
             board = self.gameArray
         
         for x in range(0, 4):
@@ -227,8 +226,8 @@ class GameState(object):
     
     
     'takes in a board, returns a copy of it rotated clockwise'
-    def rotateClockwise(self, board = NULL):
-        if (board == NULL):
+    def rotateClockwise(self, board = None):
+        if (board == None):
             board = self.gameArray
         
         newArr = [[0 for x in range(4)] for x in range(4)]
