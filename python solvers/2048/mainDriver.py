@@ -117,5 +117,5 @@ def playHuman():
 
 
 if __name__ == '__main__':
-    playGreedySearch(toRun)
+    playGreedy(toRun)
     pass

@@ -173,8 +173,7 @@ class GameState(object):
             board = self.gameArray
         
         for x in range(0, 4):
-            for y in range(0, 4):
-                print(str(board[x][y]) + " ", end="")
+            print(str(board[x][0]) + " " + str(board[x][1]) + " " + str(board[x][2]) + " " + str(board[x][3]))
             print(" ")
         pass
     
