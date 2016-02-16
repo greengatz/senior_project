@@ -3,7 +3,6 @@ Created on Feb 1, 2016
 
 @author: John_2
 '''
-from _overlapped import NULL
 from GameState import GameState
 from random import randint
 from Directions import *
@@ -33,7 +32,7 @@ class SearchSolver(object):
     
     # determines the move with the highest ev with the given search depth
     def startSearch(self, board, depth):
-        bestOption = NULL
+        bestOption = None
         bestVal = -1
         
         # base case, depth == 0
@@ -77,7 +76,7 @@ class SearchSolver(object):
                         pretendGame2.setBoard(pretendBoard2)
                         searchEv = self.startSearch(pretendGame2.copyArr(), depth - 1)
                         ev2[x][y] = searchEv[1]
-                        pretendGame4 = NULL
+                        pretendGame4 = None
                     
                         # per cell ev expecting 4
                         pretendBoard4 = baseGameUp.copyArr()
@@ -86,7 +85,7 @@ class SearchSolver(object):
                         pretendGame4.setBoard(pretendBoard4)
                         searchEv = self.startSearch(pretendGame4.copyArr(), depth - 1)
                         ev4[x][y] = searchEv[1]
-                        pretendGame4 = NULL
+                        pretendGame4 = None
                     
                         pass
             
