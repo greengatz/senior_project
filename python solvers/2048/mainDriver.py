@@ -10,7 +10,6 @@ from GreedySearch import GreedySearch
 from SearchSolver import SearchSolver
 from Directions import *
 from GameState import GameState
-from _overlapped import NULL
 
 toRun = 1;
 searchDepth = 2;
@@ -27,7 +26,7 @@ def playRandom(numTrials):
         totalScore += solver.getScore()
         if(solver.getMaxTile() > maxTile):
             maxTile = solver.getMaxTile()
-        solver = NULL
+        solver = None
     
     print("average score: " + str(totalScore / numTrials))
     print("max tile: " + str(maxTile))
@@ -46,7 +45,7 @@ def playGreedy(numTrials):
         totalScore += solver.getScore()
         if(solver.getMaxTile() > maxTile):
             maxTile = solver.getMaxTile()
-        solver = NULL
+        solver = None
     
     print("average score: " + str(totalScore / numTrials))
     print("max tile: " + str(maxTile))
@@ -65,7 +64,7 @@ def playGreedySearch(numTrials, depth=searchDepth):
         totalScore += solver.getScore()
         if(solver.getMaxTile() > maxTile):
             maxTile = solver.getMaxTile()
-        solver = NULL
+        solver = None
     
     print("average score: " + str(totalScore / numTrials))
     print("max tile: " + str(maxTile))
@@ -84,7 +83,7 @@ def playSearch(numTrials):
         totalScore += solver.getScore()
         if(solver.getMaxTile() > maxTile):
             maxTile = solver.getMaxTile()
-        solver = NULL
+        solver = None
     
     print("average score: " + str(totalScore / numTrials))
     print("max tile: " + str(maxTile))
