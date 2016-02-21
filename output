@@ -40,3 +40,9 @@ running 100 greedy games
 average score: 682
 max tile: 512
 Ending run at 2016-02-21 12:10:26
+
+Starting run at 2016-02-21 12:15:01
+running 100 greedy games
+average score: 619
+max tile: 1024
+Ending run at 2016-02-21 12:15:10
