@@ -1,1 +1,1 @@
-python python\ solvers/2048/mainDriver.py
+python python\ solvers/2048/mainDriver.py greedy 100
