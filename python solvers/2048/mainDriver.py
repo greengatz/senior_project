@@ -10,83 +10,90 @@ from GreedySearch import GreedySearch
 from SearchSolver import SearchSolver
 from Directions import *
 from GameState import GameState
+import sys
+import time
+import datetime
 
 toRun = 1;
 searchDepth = 2;
 
 def playRandom(numTrials):
-    print("running " + str(numTrials) + " random games")
-    totalScore = 0
-    maxTile = 0
-    
-    for x in range(0, numTrials):
-        #print("game: " + str(x))
-        solver = RandomSolver()
-        solver.playGame()
-        totalScore += solver.getScore()
-        if(solver.getMaxTile() > maxTile):
-            maxTile = solver.getMaxTile()
-        solver = None
-    
-    print("average score: " + str(totalScore / numTrials))
-    print("max tile: " + str(maxTile))
+    with open("output", "a") as output:
+        output.write("running " + str(numTrials) + " random games\n")
+        totalScore = 0
+        maxTile = 0
+        
+        for x in range(0, numTrials):
+            #print("game: " + str(x))
+            solver = RandomSolver()
+            solver.playGame()
+            totalScore += solver.getScore()
+            if(solver.getMaxTile() > maxTile):
+                maxTile = solver.getMaxTile()
+            solver = None
+        
+        output.write("average score: " + str(totalScore / numTrials) + "\n")
+        output.write("max tile: " + str(maxTile) + "\n")
     pass
 
 
 def playGreedy(numTrials):
-    print("running " + str(numTrials) + " greedy games")
-    totalScore = 0
-    maxTile = 0
-    
-    for x in range(0, numTrials):
-        #print("game: " + str(x))
-        solver = GreedySolver()
-        solver.playGame()
-        totalScore += solver.getScore()
-        if(solver.getMaxTile() > maxTile):
-            maxTile = solver.getMaxTile()
-        solver = None
-    
-    print("average score: " + str(totalScore / numTrials))
-    print("max tile: " + str(maxTile))
+    with open("output", "a") as output:
+        output.write("running " + str(numTrials) + " greedy games\n")
+        totalScore = 0
+        maxTile = 0
+        
+        for x in range(0, numTrials):
+            #print("game: " + str(x))
+            solver = GreedySolver()
+            solver.playGame()
+            totalScore += solver.getScore()
+            if(solver.getMaxTile() > maxTile):
+                maxTile = solver.getMaxTile()
+            solver = None
+        
+        output.write("average score: " + str(totalScore / numTrials) + "\n")
+        output.write("max tile: " + str(maxTile) + "\n")
     pass
 
 
 def playGreedySearch(numTrials, depth=searchDepth):
-    print("running " + str(numTrials) + " greedy search games with depth " + str(depth))
-    totalScore = 0
-    maxTile = 0
-    
-    for x in range(0, numTrials):
-        #print("game: " + str(x))
-        solver = GreedySearch(depth)
-        solver.playGame()
-        totalScore += solver.getScore()
-        if(solver.getMaxTile() > maxTile):
-            maxTile = solver.getMaxTile()
-        solver = None
-    
-    print("average score: " + str(totalScore / numTrials))
-    print("max tile: " + str(maxTile))
+    with open("output", "a") as output:
+        output.write("running " + str(numTrials) + " greedy search games with depth " + str(depth) + "\n")
+        totalScore = 0
+        maxTile = 0
+        
+        for x in range(0, numTrials):
+            #print("game: " + str(x))
+            solver = GreedySearch(depth)
+            solver.playGame()
+            totalScore += solver.getScore()
+            if(solver.getMaxTile() > maxTile):
+                maxTile = solver.getMaxTile()
+            solver = None
+        
+        output.write("average score: " + str(totalScore / numTrials) + "\n")
+        output.write("max tile: " + str(maxTile) + "\n")
     pass
 
 
 def playSearch(numTrials):
-    print("running " + str(numTrials) + " searched games")
-    totalScore = 0
-    maxTile = 0
-    
-    for x in range(0, numTrials):
-        #print("game: " + str(x))
-        solver = SearchSolver(searchDepth)
-        solver.playGame()
-        totalScore += solver.getScore()
-        if(solver.getMaxTile() > maxTile):
-            maxTile = solver.getMaxTile()
-        solver = None
-    
-    print("average score: " + str(totalScore / numTrials))
-    print("max tile: " + str(maxTile))
+    with open("output", "a") as output:
+        output.write("running " + str(numTrials) + " searched games" + "\n")
+        totalScore = 0
+        maxTile = 0
+        
+        for x in range(0, numTrials):
+            #print("game: " + str(x))
+            solver = SearchSolver(searchDepth)
+            solver.playGame()
+            totalScore += solver.getScore()
+            if(solver.getMaxTile() > maxTile):
+                maxTile = solver.getMaxTile()
+            solver = None
+        
+        output.write("average score: " + str(totalScore / numTrials) + "\n")
+        output.write("max tile: " + str(maxTile) + "\n")
     pass
 
 
@@ -116,5 +123,41 @@ def playHuman():
 
 
 if __name__ == '__main__':
-    playGreedy(toRun)
+    with open("output", "a") as output:
+        output.write("\nStarting run at " + datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S') + "\n")
+    
+    # validate number of args
+    numArgs = len(sys.argv)
+    if numArgs < 3:
+        choice = "badChoice"
+        runs = 0
+    else:
+        choice = sys.argv[1]
+        runs = int(sys.argv[2])
+
+    # use the correct solver based on input
+    if choice == "random":
+        playRandom(runs)
+        
+    elif choice == "greedy":
+        playGreedy(runs)
+        
+    elif choice == "greedySearch":
+        if numArgs < 4:
+            inDepth = int(sys.argv[3])
+            playGreedySearch(runs, inDepth)
+        else:
+            print("bad usage, greedy search requires a 4th arg of search depth")
+            print("ex.    thisProg.py greedySearch 10 3")
+            
+    elif choice == "human":
+        playHuman()
+        
+    else:
+        print("bad usage, invalid solver type")
+        print("valid options: random, greedy, greedySearch, human")
+        print("ex.    thisProg.py <solver type> <num trials> <additional args if required>")
+    
+    with open("output", "a") as output:
+        output.write("Ending run at " + datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S') + "\n")
     pass
