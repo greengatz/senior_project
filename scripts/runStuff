@@ -1,1 +1,1 @@
-echo @TODO run the script here
+python python\ solvers/2048/mainDriver.py
