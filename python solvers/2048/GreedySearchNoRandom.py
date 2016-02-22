@@ -7,10 +7,8 @@ Created on Feb 6, 2016
 from GameState import GameState
 from random import randint
 from Directions import *
-import time
-import datetime
 
-class GreedySearch(object):
+class GreedySearchNoRandom(object):
     '''
     classdocs
     '''
@@ -33,12 +31,10 @@ class GreedySearch(object):
         count = 0
         
         while (self.game.isGoing()):
-            print("\nStarting move: " + datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S'))
             testBoard = self.game.copyArr()
             
             bestMove = self.search(testBoard, self.depth)
             print(bestMove[0])
-            
             
             # when at the end, all decisions might lead to an inevitable failure
             if (not self.game.isValid(bestMove)):
@@ -47,15 +43,12 @@ class GreedySearch(object):
             #self.game.printState(self.game.gameArray)
             self.game.takeMove(bestMove[0])
             self.game.printState(self.game.gameArray)
-            self.numMoves = self.numMoves + 1
-        
-        print(self.numMoves)
         pass
     
     
     'returns best move and the value of that move'
     'best move is only useful for the top-level call'
-    def search(self, board, depth):
+    def search(self, board, depth):    
         if (depth == 0):
             return (Move.up, 0)
         
@@ -103,6 +96,7 @@ class GreedySearch(object):
     
     
     'returns the expected value of a given move searching with the given depth'
+    'this ignores the new tiles appearing, which saves tons on complexity'
     def searchDirection(self, board, depth, move):
         testGame = GameState()
         testGame.setBoard(board)
@@ -112,42 +106,15 @@ class GreedySearch(object):
         if (not testGame.isValid(move)):
             return -1
         
-        #determine the value for making the move at this level
+        # determine the value for making the move at this level
         ourValue = self.valueOfMove(testGame.gameArray, move)
         
-        #'using that as the starting board, check a lot of possibilities'
+        # using that as the starting board, check the child's options
         afterMove = testGame.executeMove(move)
-        testGame.setBoard(afterMove)
-        ev2 = [[0 for x in range(4)] for x in range(4)]
-        ev4 = [[0 for x in range(4)] for x in range(4)]
+        #testGame.setBoard(afterMove)
         
-        options = 0
-        searchValue = 0
-        
-        # determine the value of each cell
-        for x in range (0, 4):
-            for y in range (0, 4):
-                trialBoard = testGame.copyArr()
-                if (trialBoard[x][y] == 0):
-                    options += 1
-                    
-                    trialBoard[x][y] = 2
-                    ev2[x][y] = self.search(trialBoard, depth - 1)[1]
-                    trialBoard[x][y] = 0
-                    
-                    trialBoard[x][y] = 4
-                    ev4[x][y] = self.search(trialBoard, depth - 1)[1]
-                    trialBoard[x][y] = 0
-        
-        
-        # adjust those cells for their likelihood
-        for x in range (0, 4):
-            for y in range (0, 4):
-                searchValue += (ev2[x][y] * 0.9) / options
-                searchValue += (ev4[x][y] * 0.1) / options
-        
-        #print("ev of move " + str(move))
-        #self.game.printState(ev2)
+        #trialBoard = testGame.copyArr()
+        searchValue = self.search(afterMove, depth - 1)[1]
         
         return ourValue + searchValue
     

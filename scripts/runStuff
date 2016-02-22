@@ -1,1 +1,6 @@
-python python\ solvers/2048/mainDriver.py greedy 100
+python python\ solvers/2048/mainDriver.py greedy 1000
+python python\ solvers/2048/mainDriver.py greedy greedySearchNoRandom 100 3
+python python\ solvers/2048/mainDriver.py greedy greedySearchNoRandom 100 4
+python python\ solvers/2048/mainDriver.py greedy greedySearchNoRandom 100 5
+python python\ solvers/2048/mainDriver.py greedy greedySearch 10 2
+python python\ solvers/2048/mainDriver.py greedy greedySearch 1 3

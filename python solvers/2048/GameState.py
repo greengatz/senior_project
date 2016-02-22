@@ -1,9 +1,7 @@
 '''
 Created on Jan 11, 2016
 
-whitespace to test committing through egit
-
-@author: John_2
+@author: John
 '''
 
 from Directions import *
@@ -12,50 +10,68 @@ from random import randrange
 
 class GameState(object):
     '''
-    classdocs
-    
-    This will be passed to a game controller, which will use information regarding
+    This will be passed to a solver, which will use information regarding
     game state to determine the move.
     '''
 
-    '4 x 4 array of the game'
-    #gameArray = [[0 for x in range(4)] for x in range(4)]
-
-
-    ''
     def __init__(self):
         '''
         Constructor
         
-        TODO add 2 random tiles
+        Initializes the gameboard and adds two tiles to it.
         '''
         self.gameArray = [[0 for x in range(4)] for x in range(4)]
-        #self.addRandomTile()
-        #self.addRandomTile()
-        
-        self.gameArray[3][0] = 2
-        self.gameArray[3][2] = 2
-        self.gameArray[3][3] = 2
+        self.addRandomTile()
+        self.addRandomTile()
         
         pass
     
     
-    'TODO - check game state'
+    'check game state'
     def isGoing(self):
         return self.isValid(Move.up) or self.isValid(Move.right) or self.isValid(Move.down) or self.isValid(Move.left)
     
     
     'determines if a move would progress the game'
-    def isValid (self, move):
-        return not self.isSame(self.executeMove(move))
+    def isValid (self, move, board=None):
+        if board == None:
+            board = self.copyArr()
+        
+        isValid = False
+        
+        board = self.preRotate(move, board)
+        for x in range(0, 4):
+            isValid = isValid or self.canSlideDown(x, move, board)
+        board = self.postRotate(move, board)
+        
+        return isValid
+
+
+    'says if the given column can slide down'
+    def canSlideDown(self, column, move, board):
+        foundTile = False
+        
+        for i in range(0, 3):
+            if board[i][column] != 0:
+                foundTile = True
+            
+            if foundTile and (board[i][column] == 0 or board[i + 1][column] == 0):
+                return True
+            if board[i][column] == board[i + 1][column] and board[i][column] != 0:
+                return True
+        
+        return False
+    
     
     'determines if the current game state is different the given one'
+    'TODO this method seems unnecessary, probably remove it'
     def isSame(self, testArr):
         for x in range(0, 4):
                 for y in range(0, 4):
                     if testArr[y][x] != self.gameArray[y][x]:
                         return False
         return True
+    
     
     'tries to take a move, if it is invalid it fails and announces it'
     def takeMove (self, move):
@@ -66,6 +82,7 @@ class GameState(object):
         self.gameArray = self.executeMove(move)
         self.addRandomTile()
         return
+    
     
     'creates a copy of our game state'
     def copyArr (self):
@@ -147,6 +164,7 @@ class GameState(object):
             
         return board
     
+    
     'moves the tiles based on the chosen move'
     def executeMove (self, move, board=None):
         if (board == None):
@@ -165,7 +183,7 @@ class GameState(object):
         return self.gameArray
     
     
-    'TODO rename x and y'
+    'rename x and y'
     def printState(self, board = None):
         if (board == None):
             board = self.gameArray
@@ -176,7 +194,7 @@ class GameState(object):
         pass
     
     
-    'TODO rename x and y'
+    'adds a random tile to the board'
     def addRandomTile(self):
         tileToAdd = 2
         if(randrange(0, 10) == 0):
@@ -191,15 +209,17 @@ class GameState(object):
                     openSlots += 1
         
         'determine where the tile will go'
+        threshold = 1 / openSlots
+        test = random.random() # done this way to avoid overhead in calling random
+        
         for x in range(0, 4):
             for y in range(0, 4):
                 if self.gameArray[x][y] == 0:
-                    threshold = 1 / openSlots
-                    if  random.random() <= threshold:
+                    if test <= threshold:
                         self.gameArray[x][y] = tileToAdd
                         return
                     else:
-                        openSlots -= 1
+                        test = test - threshold
         
         print("ERROR: NO TILE ADDED")
         self.printState()
@@ -259,7 +279,8 @@ class GameState(object):
                 
         return matchCount
     
-    'allows easy board control'
+    
+    'method to allow easy board control to help with testing'
     def setBoard(self, board):
         self.gameArray = board
         pass
