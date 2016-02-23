@@ -155,6 +155,7 @@ if __name__ == '__main__':
         runs = 0
     else:
         choice = sys.argv[1]
+        print(sys.argv[2])
         runs = int(sys.argv[2])
 
     # use the correct solver based on input
