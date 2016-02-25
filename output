@@ -125,3 +125,39 @@ running 1 greedy search games with depth 3
 average score: 3646
 max tile: 2048
 Ending run at 2016-02-24 00:56:06
+
+Starting run at 2016-02-25 00:00:02
+running 100 greedy games
+average score: 680
+max tile: 512
+Ending run at 2016-02-25 00:00:10
+
+Starting run at 2016-02-25 00:00:10
+running 10 greedy search without factoring randomization games with depth 3
+average score: 1472
+max tile: 1024
+Ending run at 2016-02-25 00:00:50
+
+Starting run at 2016-02-25 00:00:50
+running 10 greedy search without factoring randomization games with depth 4
+average score: 1602
+max tile: 2048
+Ending run at 2016-02-25 00:02:48
+
+Starting run at 2016-02-25 00:02:48
+running 10 greedy search without factoring randomization games with depth 5
+average score: 1146
+max tile: 1024
+Ending run at 2016-02-25 00:06:42
+
+Starting run at 2016-02-25 00:06:42
+running 10 greedy search games with depth 2
+average score: 2131
+max tile: 2048
+Ending run at 2016-02-25 00:12:23
+
+Starting run at 2016-02-25 00:12:23
+running 1 greedy search games with depth 3
+average score: 1868
+max tile: 1024
+Ending run at 2016-02-25 00:39:52
