@@ -9,6 +9,7 @@ from GreedySolver import GreedySolver
 from GreedySearch import GreedySearch
 from GreedySearchNoRandom import GreedySearchNoRandom
 from SearchSolver import SearchSolver
+from SearchRandomComparison import SearchRandomComparison
 from Directions import *
 from GameState import GameState
 import sys
@@ -99,6 +100,33 @@ def playGreedySearchNoRandom(numTrials, depth=searchDepth):
     pass
 
 
+'Greedy matching strategy, except it ignores all random possibilities'
+def playSearchRandomComparison(numTrials, depth, zeroLevel):
+    with open("output", "a") as output:
+        output.write("running " + str(numTrials) + " search comparisons with depth " + str(depth) + "\n")
+        output.write("the required number of 0s for a comparison is " + str(zeroLevel) + "\n")
+        totalScore = 0
+        maxTile = 0
+        disagreements = 0
+        comparisons = 0
+        
+        for x in range(0, numTrials):
+            #print("game: " + str(x))
+            solver = SearchRandomComparison(depth, zeroLevel)
+            solver.playGame()
+            totalScore += solver.getScore()
+            if(solver.getMaxTile() > maxTile):
+                maxTile = solver.getMaxTile()
+            disagreements += solver.getDisagreements()
+            comparisons += solver.getComparisons()
+            solver = None
+        
+        output.write("average score: " + str(totalScore / numTrials) + "\n")
+        output.write("max tile: " + str(maxTile) + "\n")
+        output.write("comparisons: " + str(comparisons) + "\ndisagreements: " + str(disagreements) + "\n")
+    pass
+
+
 def playSearch(numTrials):
     with open("output", "a") as output:
         output.write("running " + str(numTrials) + " searched games" + "\n")
@@ -179,13 +207,22 @@ if __name__ == '__main__':
         else:
             inDepth = int(sys.argv[3])
             playGreedySearchNoRandom(runs, inDepth)
+    
+    elif choice == "searchRandomComparison":
+        if numArgs < 5:
+            print("bad usage, greedy search requires a 4th arg of search depth and a 5th argument of required 0s on board")
+            print("ex.    thisProg.py searchRandomComparison 10 3 8")
+        else:
+            inDepth = int(sys.argv[3])
+            zeroLevel = int(sys.argv[4])
+            playSearchRandomComparison(runs, inDepth, zeroLevel)
             
     elif choice == "human":
         playHuman()
         
     else:
         print("bad usage, invalid solver type")
-        print("valid options: random, greedy, greedySearch, greedySearchNoRandom, human")
+        print("valid options: random, greedy, greedySearch, greedySearchNoRandom, human, searchRandomComparison")
         print("ex.    thisProg.py <solver type> <num trials> <additional args if required>")
     
     with open("output", "a") as output:
