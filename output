@@ -391,3 +391,66 @@ the required number of 0s for a comparison is 6
 Starting run at 2016-03-01 10:19:52
 running 10 search comparisons with depth 2
 the required number of 0s for a comparison is 4
+
+Starting run at 2016-03-01 10:21:27
+running 100 greedy search without factoring randomization games with depth 3
+average score: 2032
+max tile: 2048
+Ending run at 2016-03-01 10:28:33
+
+Starting run at 2016-03-01 10:28:34
+running 100 greedy search without factoring randomization games with depth 4
+average score: 1953
+max tile: 1024
+Ending run at 2016-03-01 10:48:50
+
+Starting run at 2016-03-01 10:48:50
+running 100 greedy search without factoring randomization games with depth 5
+average score: 1478
+max tile: 2048
+Ending run at 2016-03-01 11:31:08
+
+Starting run at 2016-03-01 11:31:08
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 12
+average score: 2888
+max tile: 2048
+comparisons: 96
+disagreements: 96
+Ending run at 2016-03-01 11:35:38
+
+Starting run at 2016-03-01 11:35:38
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 10
+average score: 2461
+max tile: 1024
+comparisons: 510
+disagreements: 510
+Ending run at 2016-03-01 11:39:25
+
+Starting run at 2016-03-01 11:39:25
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 8
+average score: 2813
+max tile: 1024
+comparisons: 1718
+disagreements: 1608
+Ending run at 2016-03-01 11:43:37
+
+Starting run at 2016-03-01 11:43:37
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 6
+average score: 2479
+max tile: 1024
+comparisons: 3696
+disagreements: 3234
+Ending run at 2016-03-01 11:47:43
+
+Starting run at 2016-03-01 11:47:43
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 4
+average score: 2959
+max tile: 2048
+comparisons: 6524
+disagreements: 5432
+Ending run at 2016-03-01 11:52:49

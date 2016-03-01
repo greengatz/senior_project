@@ -44,10 +44,10 @@ class SearchRandomComparison(object):
             print(bestMove[0])
             
             if self.enoughZeroes():
-                comparisons += 1
+                self.comparisons += 1
                 noRandomMove = self.searchNoRandom(self.game.copyArr(), self.depth)
                 if not noRandomMove == bestMove:
-                    disagreements += 1
+                    self.disagreements += 1
             
             
             # when at the end, all decisions might lead to an inevitable failure
@@ -60,7 +60,6 @@ class SearchRandomComparison(object):
             self.numMoves = self.numMoves + 1
         
         print(self.numMoves)
-        print("out of " + str(comparisons) + " comparisons at when the board has at least " + str(self.zeroes) + " 0-tiles, there were " + str(disagreements) + " disagreements")
         pass
     
     
