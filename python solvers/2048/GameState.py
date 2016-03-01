@@ -23,6 +23,7 @@ class GameState(object):
         self.gameArray = [[0 for x in range(4)] for x in range(4)]
         self.addRandomTile()
         self.addRandomTile()
+        self.score = 0
         
         pass
     
@@ -100,6 +101,7 @@ class GameState(object):
         x = 2
         y = 0
         limit = 3
+        scoreIncrease = 0
 
         while (x >= 0):
             if (board[x][column] != 0):
@@ -108,6 +110,7 @@ class GameState(object):
                     # if we find a match
                     if (board[x][column] == board[y][column]):
                         board[y][column] += board[x][column]
+                        scoreIncrease += board[y][column]
                         board[x][column] = 0
                         limit = y - 1
                         y = 5
@@ -129,6 +132,8 @@ class GameState(object):
                     # no choice found, keep searching
                     y += 1
             x = x - 1
+        
+        return scoreIncrease
     
     
     'rotates the board so a move will be down'
@@ -169,11 +174,16 @@ class GameState(object):
     def executeMove (self, move, board=None):
         if (board == None):
             board = self.copyArr()
+            incrScore = True
         
+        toIncr = 0
         board = self.preRotate(move, board)
         for x in range(0, 4):
-            self.slideDown(x, board)
+            toIncr = self.slideDown(x, board)
         board = self.postRotate(move, board)
+        
+        if incrScore:
+            self.score += toIncr
         
         return board
     
@@ -231,12 +241,11 @@ class GameState(object):
     
     'returns the total score on the table'
     def getScore(self):
-        score = 0
-        for x in range(0, 4):
-            for y in range(0, 4):
-                score += self.gameArray[x][y]
-        return score
+        return self.score
     
+    'sets the score, useful for replicating gamestates'
+    def setScore(self, newScore):
+        self.score = newScore
     
     'returns the highest tile on the board'
     def getMaxTile(self):
