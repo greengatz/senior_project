@@ -224,12 +224,15 @@ class GameState(object):
         
         for x in range(0, 4):
             for y in range(0, 4):
+                threshold = 1 / openSlots
+                test = random.random()
+
                 if self.gameArray[x][y] == 0:
                     if test <= threshold:
                         self.gameArray[x][y] = tileToAdd
                         return
                     else:
-                        test = test - threshold
+                        openSlots = openSlots - 1
         
         print("ERROR: NO TILE ADDED")
         self.printState()
