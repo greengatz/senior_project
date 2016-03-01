@@ -1,9 +1,9 @@
 #python python\ solvers/2048/mainDriver.py greedy 1000
-python python\ solvers/2048/mainDriver.py greedy greedySearchNoRandom 100 3
-python python\ solvers/2048/mainDriver.py greedy greedySearchNoRandom 100 4
-python python\ solvers/2048/mainDriver.py greedy greedySearchNoRandom 100 5
-#python python\ solvers/2048/mainDriver.py greedy greedySearch 100 2
-#python python\ solvers/2048/mainDriver.py greedy greedySearch 1 3
+python python\ solvers/2048/mainDriver.py greedySearchNoRandom 100 3
+python python\ solvers/2048/mainDriver.py greedySearchNoRandom 100 4
+python python\ solvers/2048/mainDriver.py greedySearchNoRandom 100 5
+#python python\ solvers/2048/mainDriver.py greedySearch 100 2
+#python python\ solvers/2048/mainDriver.py greedySearch 1 3
 python python\ solvers/2048/mainDriver.py searchRandomComparison 10 2 12
 python python\ solvers/2048/mainDriver.py searchRandomComparison 10 2 10
 python python\ solvers/2048/mainDriver.py searchRandomComparison 10 2 8
