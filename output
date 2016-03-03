@@ -454,3 +454,41 @@ max tile: 2048
 comparisons: 6524
 disagreements: 5432
 Ending run at 2016-03-01 11:52:49
+
+Starting run at 2016-03-02 00:00:01
+running 100 greedy search without factoring randomization games with depth 3
+average score: 2141
+max tile: 2048
+Ending run at 2016-03-02 00:06:51
+
+Starting run at 2016-03-02 00:06:51
+running 100 greedy search without factoring randomization games with depth 4
+average score: 1862
+max tile: 2048
+Ending run at 2016-03-02 00:24:10
+
+Starting run at 2016-03-02 00:24:10
+running 100 greedy search without factoring randomization games with depth 5
+average score: 1644
+max tile: 2048
+Ending run at 2016-03-02 01:05:55
+
+Starting run at 2016-03-02 01:05:55
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 12
+average score: 2971
+max tile: 1024
+comparisons: 109
+disagreements: 109
+Ending run at 2016-03-02 01:10:32
+
+Starting run at 2016-03-02 01:10:32
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 10
+average score: 2940
+max tile: 2048
+comparisons: 460
+disagreements: 457
+Ending run at 2016-03-02 01:15:08
+
+Starting run at 2016-03-02 01:15:08
