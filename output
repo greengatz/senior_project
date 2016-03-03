@@ -555,3 +555,20 @@ max tile: 2048
 comparisons: 6201
 disagreements: 5180
 Ending run at 2016-03-03 02:15:03
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 8
+
+Starting run at 2016-03-03 07:13:57
+running 10 greedy search games with depth 2
+
+Starting run at 2016-03-03 07:13:57
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 6
+
+Starting run at 2016-03-03 07:14:04
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 4
+running 1 greedy search games with depth 3
+average score: 5904
+max tile: 2048
+Ending run at 2016-03-03 07:53:58
