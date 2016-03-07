@@ -7,6 +7,7 @@ Created on Jan 11, 2016
 from RandomSolver import RandomSolver
 from GreedySolver import GreedySolver
 from GreedySearch import GreedySearch
+from RegionSearch import RegionSearch
 from GreedySearchNoRandom import GreedySearchNoRandom
 from SearchSolver import SearchSolver
 from SearchRandomComparison import SearchRandomComparison
@@ -76,6 +77,22 @@ def playGreedySearch(numTrials, depth):
         
         for x in range(0, numTrials):
             solver = GreedySearch(depth)
+            solver.playGame()
+            recordData(solver, tile, score)
+            solver = None
+        
+        printRunData(tile, score, output)
+    pass
+
+
+def playRegionSearch(numTrials, depth):
+    with open("output", "a") as output:
+        output.write("running " + str(numTrials) + " region-based search games with depth " + str(depth) + "\n")
+        tile = DataGroup()
+        score = DataGroup()
+        
+        for x in range(0, numTrials):
+            solver = RegionSearch(depth)
             solver.playGame()
             recordData(solver, tile, score)
             solver = None
@@ -202,6 +219,14 @@ if __name__ == '__main__':
         else:
             inDepth = int(sys.argv[3])
             playGreedySearchNoRandom(runs, inDepth)
+    
+    elif choice == "regionSearch":
+        if numArgs < 4:
+            print("bad usage, region search requires a 4th arg of search depth")
+            print("ex.    thisProg.py regionSearch 10 3")
+        else:
+            inDepth = int(sys.argv[3])
+            playRegionSearch(runs, inDepth)
     
     elif choice == "searchRandomComparison":
         if numArgs < 5:
