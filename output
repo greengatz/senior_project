@@ -610,3 +610,23 @@ disagreements: 493
 Ending run at 2016-03-04 01:14:21
 
 Starting run at 2016-03-04 01:14:21
+
+Starting run at 2016-03-08 00:00:04
+running 50 greedy search without factoring randomization games with depth 3
+SCORE---max : 5392   ---mean : 2261   ---std : 7841.72544788
+TILE---max : 2048   ---mean : 875   ---std : 3280.20029876
+Ending run at 2016-03-08 00:03:30
+
+Starting run at 2016-03-08 00:03:30
+running 50 greedy search without factoring randomization games with depth 4
+SCORE---max : 3356   ---mean : 1967   ---std : 5251.73666514
+TILE---max : 2048   ---mean : 819   ---std : 2260.93122408
+Ending run at 2016-03-08 00:12:33
+
+Starting run at 2016-03-08 00:12:33
+running 50 greedy search without factoring randomization games with depth 5
+SCORE---max : 3332   ---mean : 1519   ---std : 3949.58352235
+TILE---max : 1024   ---mean : 668   ---std : 1875.01466661
+Ending run at 2016-03-08 00:32:54
+
+Starting run at 2016-03-08 00:32:54

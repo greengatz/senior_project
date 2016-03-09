@@ -7,96 +7,114 @@ Created on Jan 11, 2016
 from RandomSolver import RandomSolver
 from GreedySolver import GreedySolver
 from GreedySearch import GreedySearch
+from RegionSearch import RegionSearch
 from GreedySearchNoRandom import GreedySearchNoRandom
 from SearchSolver import SearchSolver
 from SearchRandomComparison import SearchRandomComparison
 from Directions import *
 from GameState import GameState
+from Histogram import DataGroup
 import sys
 import time
 import datetime
 
-toRun = 1;
-searchDepth = 2;
+
+def recordData(solver, tile, score):
+    score.put(solver.getScore())
+    tile.put(solver.getMaxTile())
+    pass
+
+
+def printRunData(tile, score, output):
+    output.write("SCORE")
+    output.write("---max : " + str(score.getMax()))
+    output.write("   ---mean : " + str(score.getMean()))
+    output.write("   ---std : " + str(score.getStd()) + "\n")
+    output.write("TILE")
+    output.write("---max : " + str(tile.getMax()))
+    output.write("   ---mean : " + str(tile.getMean()))
+    output.write("   ---std : " + str(tile.getStd()) + "\n")
+    pass
+
 
 def playRandom(numTrials):
     with open("output", "a") as output:
         output.write("running " + str(numTrials) + " random games\n")
-        totalScore = 0
-        maxTile = 0
+        tile = DataGroup()
+        score = DataGroup()
         
         for x in range(0, numTrials):
-            #print("game: " + str(x))
             solver = RandomSolver()
             solver.playGame()
-            totalScore += solver.getScore()
-            if(solver.getMaxTile() > maxTile):
-                maxTile = solver.getMaxTile()
+            recordData(solver, tile, score)
             solver = None
         
-        output.write("average score: " + str(totalScore / numTrials) + "\n")
-        output.write("max tile: " + str(maxTile) + "\n")
+        printRunData(tile, score, output)
     pass
 
 
 def playGreedy(numTrials):
     with open("output", "a") as output:
         output.write("running " + str(numTrials) + " greedy games\n")
-        totalScore = 0
-        maxTile = 0
+        tile = DataGroup()
+        score = DataGroup()
         
         for x in range(0, numTrials):
-            #print("game: " + str(x))
             solver = GreedySolver()
             solver.playGame()
-            totalScore += solver.getScore()
-            if(solver.getMaxTile() > maxTile):
-                maxTile = solver.getMaxTile()
+            recordData(solver, tile, score)
             solver = None
         
-        output.write("average score: " + str(totalScore / numTrials) + "\n")
-        output.write("max tile: " + str(maxTile) + "\n")
+        printRunData(tile, score, output)
     pass
 
 
-def playGreedySearch(numTrials, depth=searchDepth):
+def playGreedySearch(numTrials, depth):
     with open("output", "a") as output:
         output.write("running " + str(numTrials) + " greedy search games with depth " + str(depth) + "\n")
-        totalScore = 0
-        maxTile = 0
+        tile = DataGroup()
+        score = DataGroup()
         
         for x in range(0, numTrials):
-            #print("game: " + str(x))
             solver = GreedySearch(depth)
             solver.playGame()
-            totalScore += solver.getScore()
-            if(solver.getMaxTile() > maxTile):
-                maxTile = solver.getMaxTile()
+            recordData(solver, tile, score)
             solver = None
         
-        output.write("average score: " + str(totalScore / numTrials) + "\n")
-        output.write("max tile: " + str(maxTile) + "\n")
+        printRunData(tile, score, output)
+    pass
+
+
+def playRegionSearch(numTrials, depth):
+    with open("output", "a") as output:
+        output.write("running " + str(numTrials) + " region-based search games with depth " + str(depth) + "\n")
+        tile = DataGroup()
+        score = DataGroup()
+        
+        for x in range(0, numTrials):
+            solver = RegionSearch(depth)
+            solver.playGame()
+            recordData(solver, tile, score)
+            solver = None
+        
+        printRunData(tile, score, output)
     pass
 
 
 'Greedy matching strategy, except it ignores all random possibilities'
-def playGreedySearchNoRandom(numTrials, depth=searchDepth):
+def playGreedySearchNoRandom(numTrials, depth):
     with open("output", "a") as output:
         output.write("running " + str(numTrials) + " greedy search without factoring randomization games with depth " + str(depth) + "\n")
-        totalScore = 0
-        maxTile = 0
+        tile = DataGroup()
+        score = DataGroup()
         
         for x in range(0, numTrials):
-            #print("game: " + str(x))
             solver = GreedySearchNoRandom(depth)
             solver.playGame()
-            totalScore += solver.getScore()
-            if(solver.getMaxTile() > maxTile):
-                maxTile = solver.getMaxTile()
+            recordData(solver, tile, score)
             solver = None
         
-        output.write("average score: " + str(totalScore / numTrials) + "\n")
-        output.write("max tile: " + str(maxTile) + "\n")
+        printRunData(tile, score, output)
     pass
 
 
@@ -105,24 +123,20 @@ def playSearchRandomComparison(numTrials, depth, zeroLevel):
     with open("output", "a") as output:
         output.write("running " + str(numTrials) + " search comparisons with depth " + str(depth) + "\n")
         output.write("the required number of 0s for a comparison is " + str(zeroLevel) + "\n")
-        totalScore = 0
-        maxTile = 0
+        tile = DataGroup()
+        score = DataGroup()
         disagreements = 0
         comparisons = 0
         
         for x in range(0, numTrials):
-            #print("game: " + str(x))
             solver = SearchRandomComparison(depth, zeroLevel)
             solver.playGame()
-            totalScore += solver.getScore()
-            if(solver.getMaxTile() > maxTile):
-                maxTile = solver.getMaxTile()
+            recordData(solver, tile, score)
             disagreements += solver.getDisagreements()
             comparisons += solver.getComparisons()
             solver = None
         
-        output.write("average score: " + str(totalScore / numTrials) + "\n")
-        output.write("max tile: " + str(maxTile) + "\n")
+        printRunData(tile, score, output)
         output.write("comparisons: " + str(comparisons) + "\ndisagreements: " + str(disagreements) + "\n")
     pass
 
@@ -130,20 +144,17 @@ def playSearchRandomComparison(numTrials, depth, zeroLevel):
 def playSearch(numTrials):
     with open("output", "a") as output:
         output.write("running " + str(numTrials) + " searched games" + "\n")
-        totalScore = 0
-        maxTile = 0
+        tile = DataGroup()
+        score = DataGroup()
         
         for x in range(0, numTrials):
             #print("game: " + str(x))
             solver = SearchSolver(searchDepth)
             solver.playGame()
-            totalScore += solver.getScore()
-            if(solver.getMaxTile() > maxTile):
-                maxTile = solver.getMaxTile()
+            recordData(solver, tile, score)
             solver = None
         
-        output.write("average score: " + str(totalScore / numTrials) + "\n")
-        output.write("max tile: " + str(maxTile) + "\n")
+        printRunData(tile, score, output)
     pass
 
 
@@ -208,6 +219,14 @@ if __name__ == '__main__':
         else:
             inDepth = int(sys.argv[3])
             playGreedySearchNoRandom(runs, inDepth)
+    
+    elif choice == "regionSearch":
+        if numArgs < 4:
+            print("bad usage, region search requires a 4th arg of search depth")
+            print("ex.    thisProg.py regionSearch 10 3")
+        else:
+            inDepth = int(sys.argv[3])
+            playRegionSearch(runs, inDepth)
     
     elif choice == "searchRandomComparison":
         if numArgs < 5:
