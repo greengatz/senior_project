@@ -630,3 +630,23 @@ TILE---max : 1024   ---mean : 668   ---std : 1875.01466661
 Ending run at 2016-03-08 00:32:54
 
 Starting run at 2016-03-08 00:32:54
+
+Starting run at 2016-03-09 00:00:01
+running 50 greedy search without factoring randomization games with depth 3
+SCORE---max : 4236   ---mean : 1810   ---std : 5658.31989198
+TILE---max : 2048   ---mean : 752   ---std : 2790.52109829
+Ending run at 2016-03-09 00:03:05
+
+Starting run at 2016-03-09 00:03:05
+running 50 greedy search without factoring randomization games with depth 4
+SCORE---max : 5604   ---mean : 2155   ---std : 6130.63079952
+TILE---max : 2048   ---mean : 885   ---std : 2738.36776201
+Ending run at 2016-03-09 00:13:03
+
+Starting run at 2016-03-09 00:13:03
+running 50 greedy search without factoring randomization games with depth 5
+SCORE---max : 3552   ---mean : 1580   ---std : 4664.50083074
+TILE---max : 1024   ---mean : 686   ---std : 1930.72214469
+Ending run at 2016-03-09 00:33:41
+
+Starting run at 2016-03-09 00:33:41
