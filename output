@@ -686,3 +686,26 @@ running 100 region-based search games with depth 2
 
 Starting run at 2016-03-10 03:38:04
 running 5 region-based search games with depth 3
+running 100 greedy search games with depth 2
+
+Starting run at 2016-03-10 06:12:42
+running 100 greedy search games with depth 2
+
+Starting run at 2016-03-10 06:12:42
+running 3 greedy search games with depth 3
+
+Starting run at 2016-03-10 06:16:46
+running 100 region-based search games with depth 2
+
+Starting run at 2016-03-10 06:16:46
+running 5 region-based search games with depth 3
+running 3 greedy search games with depth 3
+SCORE---max : 3468   ---mean : 2662   ---std : 1223.57345509
+TILE---max : 1024   ---mean : 853   ---std : 418.046648115
+Ending run at 2016-03-10 07:23:05
+
+Starting run at 2016-03-10 07:23:05
+running 100 region-based search games with depth 2
+
+Starting run at 2016-03-10 07:23:05
+running 5 region-based search games with depth 3
