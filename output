@@ -864,3 +864,46 @@ running 100 region-based search games with depth 2
 
 Starting run at 2016-03-15 02:36:00
 running 5 region-based search games with depth 3
+
+Starting run at 2016-03-16 00:00:02
+running 50 greedy search without factoring randomization games with depth 3
+SCORE---max : 4708   ---mean : 2426   ---std : 6814.2820605
+TILE---max : 2048   ---mean : 931   ---std : 2654.51803535
+Ending run at 2016-03-16 00:03:39
+
+Starting run at 2016-03-16 00:03:39
+running 50 greedy search without factoring randomization games with depth 4
+SCORE---max : 4324   ---mean : 2009   ---std : 6208.12322687
+TILE---max : 2048   ---mean : 814   ---std : 2911.88049205
+Ending run at 2016-03-16 00:12:43
+
+Starting run at 2016-03-16 00:12:43
+running 50 greedy search without factoring randomization games with depth 5
+SCORE---max : 3428   ---mean : 1692   ---std : 5744.32311069
+TILE---max : 1024   ---mean : 732   ---std : 2048.32028746
+Ending run at 2016-03-16 00:34:21
+
+Starting run at 2016-03-16 00:34:21
+running 100 greedy search games with depth 2
+running 100 greedy search games with depth 2
+
+Starting run at 2016-03-16 17:46:08
+
+Starting run at 2016-03-16 17:46:08
+running 3 greedy search games with depth 3
+
+Starting run at 2016-03-16 17:50:04
+running 100 region-based search games with depth 2
+
+Starting run at 2016-03-16 17:50:04
+running 5 region-based search games with depth 3
+running 3 greedy search games with depth 3
+SCORE---max : 5176   ---mean : 3445   ---std : 2293.82017604
+TILE---max : 2048   ---mean : 1194   ---std : 1106.04701528
+Ending run at 2016-03-16 19:07:54
+
+Starting run at 2016-03-16 19:07:54
+running 100 region-based search games with depth 2
+
+Starting run at 2016-03-16 19:07:54
+running 5 region-based search games with depth 3
