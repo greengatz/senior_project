@@ -9,6 +9,7 @@ from GreedySolver import GreedySolver
 from GreedySearch import GreedySearch
 from RegionSearch import RegionSearch
 from GreedySearchNoRandom import GreedySearchNoRandom
+from GreedySearchPercentageDepth import GreedySearchPercentageDepth
 from SearchSolver import SearchSolver
 from SearchRandomComparison import SearchRandomComparison
 from Directions import *
@@ -77,6 +78,22 @@ def playGreedySearch(numTrials, depth):
         
         for x in range(0, numTrials):
             solver = GreedySearch(depth)
+            solver.playGame()
+            recordData(solver, tile, score)
+            solver = None
+        
+        printRunData(tile, score, output)
+    pass
+
+
+def playGreedySearchPercentageDepth(numTrials, depthPercent):
+    with open("output", "a") as output:
+        output.write("running " + str(numTrials) + " greedy search games with depth-based percentage threshold " + str(depthPercent) + "\n")
+        tile = DataGroup()
+        score = DataGroup()
+        
+        for x in range(0, numTrials):
+            solver = GreedySearchPercentageDepth(depthPercent)
             solver.playGame()
             recordData(solver, tile, score)
             solver = None
@@ -211,6 +228,14 @@ if __name__ == '__main__':
         else:
             inDepth = int(sys.argv[3])
             playGreedySearch(runs, inDepth)
+    
+    elif choice == "greedySearchPercentageDepth":
+        if numArgs < 4:
+            print("bad usage, greedy search with percentage-based depth requires a 4th arg of percentage to search through")
+            print("ex.    thisProg.py greedySearchPercentageDepth 10 0.015")
+        else:
+            threshold = float(sys.argv[3])
+            playGreedySearchPercentageDepth(runs, threshold)
     
     elif choice == "greedySearchNoRandom":
         if numArgs < 4:
