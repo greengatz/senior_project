@@ -1,14 +1,18 @@
-#python python\ solvers/2048/mainDriver.py greedy 1000
-
-python python\ solvers/2048/mainDriver.py greedySearchNoRandom 50 3
-python python\ solvers/2048/mainDriver.py greedySearchNoRandom 50 4
-python python\ solvers/2048/mainDriver.py greedySearchNoRandom 50 5
+#python python\ solvers/2048/mainDriver.py greedySearchNoRandom 50 3
+#python python\ solvers/2048/mainDriver.py greedySearchNoRandom 50 4
+#python python\ solvers/2048/mainDriver.py greedySearchNoRandom 50 5
 
 python python\ solvers/2048/mainDriver.py greedySearch 100 2
 python python\ solvers/2048/mainDriver.py greedySearch 3 3
 
-python python\ solvers/2048/mainDriver.py regionSearch 100 2
-python python\ solvers/2048/mainDriver.py regionSearch 5 3
+python python\ solvers/2048/mainDriver.py greedySearchPercentageDepth 100 0.01
+python python\ solvers/2048/mainDriver.py greedySearchPercentageDepth 20 0.005
+python python\ solvers/2048/mainDriver.py greedySearchPercentageDepth 10 0.002
+python python\ solvers/2048/mainDriver.py greedySearchPercentageDepth 5 0.001
+python python\ solvers/2048/mainDriver.py greedySearchPercentageDepth 3 0.0005
+
+#python python\ solvers/2048/mainDriver.py regionSearch 100 2
+#python python\ solvers/2048/mainDriver.py regionSearch 5 3
 
 #python python\ solvers/2048/mainDriver.py searchRandomComparison 10 2 12
 #python python\ solvers/2048/mainDriver.py searchRandomComparison 10 2 10
