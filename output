@@ -993,3 +993,27 @@ running 10 greedy search games with depth-based percentage threshold 0.0001
 SCORE---max : 1048   ---mean : 490   ---std : 738.501184833
 TILE---max : 256   ---mean : 160   ---std : 207.383702349
 Ending run at 2016-04-05 06:55:59
+
+Starting run at 2016-04-06 00:00:02
+running 10 greedy search games with depth-based percentage threshold 0.001
+SCORE---max : 1512   ---mean : 514   ---std : 1151.25323018
+TILE---max : 256   ---mean : 160   ---std : 259.969228948
+Ending run at 2016-04-06 00:01:18
+
+Starting run at 2016-04-06 00:01:18
+running 10 greedy search games with depth-based percentage threshold 0.0005
+SCORE---max : 628   ---mean : 407   ---std : 487.173480395
+TILE---max : 256   ---mean : 131   ---std : 223.772205602
+Ending run at 2016-04-06 00:02:26
+
+Starting run at 2016-04-06 00:02:26
+running 10 greedy search games with depth-based percentage threshold 0.0003
+SCORE---max : 1124   ---mean : 422   ---std : 859.660398064
+TILE---max : 256   ---mean : 140   ---std : 198.3128841
+Ending run at 2016-04-06 00:03:38
+
+Starting run at 2016-04-06 00:03:38
+running 10 greedy search games with depth-based percentage threshold 0.0001
+SCORE---max : 588   ---mean : 360   ---std : 436.275142542
+TILE---max : 256   ---mean : 134   ---std : 141.675685987
+Ending run at 2016-04-06 00:06:07
