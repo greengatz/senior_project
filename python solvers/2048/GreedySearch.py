@@ -14,7 +14,13 @@ class GreedySearch(object):
     '''
     classdocs
     '''
-
+    fourCorners = {(0, 0), (0, 3), (3, 0), (3, 3)}
+    possibilities = {Move.down, Move.left, Move.up, Move.right}
+    
+    enterCorner = 0
+    maxInCornerMultiplier = 1.0
+    cornerBonusScaledByMax = 0.8
+    moveDownPenalty = 0.0
 
     def __init__(self, inDepth):
         '''
@@ -56,36 +62,17 @@ class GreedySearch(object):
     'returns best move and the value of that move'
     'best move is only useful for the top-level call'
     def search(self, board, depth):
-        'TODO remove magic'
         if (depth == 0):
             return (Move.up, 0)
         
         bestMove = Move.up
         bestValue = -1
         
-        move = Move.up
-        moveValue = self.searchDirection(board, depth, move)
-        if (moveValue > bestValue):
-            bestMove = move
-            bestValue = moveValue
-        
-        move = Move.left
-        moveValue = self.searchDirection(board, depth, move)
-        if (moveValue > bestValue):
-            bestMove = move
-            bestValue = moveValue
-            
-        move = Move.right
-        moveValue = self.searchDirection(board, depth, move)
-        if (moveValue > bestValue):
-            bestMove = move
-            bestValue = moveValue
-        
-        move = Move.down
-        moveValue = self.searchDirection(board, depth, move)
-        if (moveValue > bestValue):
-            bestMove = move
-            bestValue = moveValue
+        for move in self.possibilities:
+            moveValue = self.searchDirection(board, depth, move)
+            if (moveValue > bestValue):
+                bestMove = move
+                bestValue = moveValue
         
         return (bestMove, bestValue)
     
@@ -94,10 +81,30 @@ class GreedySearch(object):
     'this only determines value of one move and no further searching'
     def valueOfMove(self, board, move):
         board = self.game.preRotate(move, board)
-        
+        testGame = GameState()
+        testGame.setBoard(board)
+        testGame.setBoard(testGame.copyArr())
         value = 0
-        for x in range(0, 4):
-            value += self.game.countSlideDownMatches(x, board)
+        
+        # store previous information
+        oldScore = testGame.getScore()
+        oldMaxTile = testGame.getMaxTile()
+        
+        testGame.executeMove(Move.down)
+        newScore = testGame.getScore()
+        value += newScore - oldScore
+        
+        # check if the largest tile is in a corner after the move
+        newMaxTile = testGame.getMaxTile()
+        for corner in self.fourCorners:
+            if testGame.gameArray[corner[0]][corner[1]] == newMaxTile:
+                value *= self.maxInCornerMultiplier
+                value += self.cornerBonusScaledByMax * newMaxTile
+                value += self.enterCorner
+        
+        # penalty for moving down
+        if move == Move.down:
+            value -= self.moveDownPenalty * newMaxTile
         
         board = self.game.postRotate(move, board)
         return value
