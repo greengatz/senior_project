@@ -7,6 +7,7 @@ Created on Feb 6, 2016
 from GameState import GameState
 from random import randint
 from Directions import *
+from ValueCalculator import value
 import time
 import datetime
 
@@ -80,34 +81,35 @@ class GreedySearch(object):
     'returns the number of matches that a given move would make'
     'this only determines value of one move and no further searching'
     def valueOfMove(self, board, move):
-        board = self.game.preRotate(move, board)
-        testGame = GameState()
-        testGame.setBoard(board)
-        testGame.setBoard(testGame.copyArr())
-        value = 0
-        
-        # store previous information
-        oldScore = testGame.getScore()
-        oldMaxTile = testGame.getMaxTile()
-        
-        testGame.executeMove(Move.down)
-        newScore = testGame.getScore()
-        value += newScore - oldScore
-        
-        # check if the largest tile is in a corner after the move
-        newMaxTile = testGame.getMaxTile()
-        for corner in self.fourCorners:
-            if testGame.gameArray[corner[0]][corner[1]] == newMaxTile:
-                value *= self.maxInCornerMultiplier
-                value += self.cornerBonusScaledByMax * newMaxTile
-                value += self.enterCorner
-        
-        # penalty for moving down
-        if move == Move.down:
-            value -= self.moveDownPenalty * newMaxTile
-        
-        board = self.game.postRotate(move, board)
-        return value
+        return value(self.game.preRotate(move, board), self.game, move)
+#         board = self.game.preRotate(move, board)
+#         testGame = GameState()
+#         testGame.setBoard(board)
+#         testGame.setBoard(testGame.copyArr())
+#         value = 0
+#         
+#         # store previous information
+#         oldScore = testGame.getScore()
+#         oldMaxTile = testGame.getMaxTile()
+#         
+#         testGame.executeMove(Move.down)
+#         newScore = testGame.getScore()
+#         value += newScore - oldScore
+#         
+#         # check if the largest tile is in a corner after the move
+#         newMaxTile = testGame.getMaxTile()
+#         for corner in self.fourCorners:
+#             if testGame.gameArray[corner[0]][corner[1]] == newMaxTile:
+#                 value *= self.maxInCornerMultiplier
+#                 value += self.cornerBonusScaledByMax * newMaxTile
+#                 value += self.enterCorner
+#         
+#         # penalty for moving down
+#         if move == Move.down:
+#             value -= self.moveDownPenalty * newMaxTile
+#         
+#         board = self.game.postRotate(move, board)
+#         return value
     
     
     'returns the expected value of a given move searching with the given depth'

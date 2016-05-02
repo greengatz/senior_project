@@ -271,8 +271,33 @@ class GameState(object):
         return newArr
     
     
-    'tells how many matches can be made with that column'
-    def countSlideDownMatches(self, column, board):
+#     'tells how many matches can be made with that column'
+#     def countSlideDownMatches(self, column, board):
+#         matchCount = 0
+#         x = 0
+#         y = 0
+#         
+#         while (x < 4):
+#             for y in range(x + 1, 4):
+#                 #print ("checking " + str(x) + " against " + str(y))
+#                 if (board[x][column] == board[y][column] and board[x][column] != 0):
+#                     matchCount += 1
+#                     x = y
+#                     #print("merge, x is " + str(x))
+#                     break
+#                 elif (board[x][column] != board[y][column] and board[y][column] != 0):
+#                     break
+#             x += 1
+#                 
+#         return matchCount
+    
+    
+    'method to allow easy board control to help with testing'
+    def setBoard(self, board):
+        self.gameArray = board
+        pass
+
+def countSlideDownMatches(column, board):
         matchCount = 0
         x = 0
         y = 0
@@ -290,9 +315,3 @@ class GameState(object):
             x += 1
                 
         return matchCount
-    
-    
-    'method to allow easy board control to help with testing'
-    def setBoard(self, board):
-        self.gameArray = board
-        pass
