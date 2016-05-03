@@ -8,7 +8,6 @@ from Directions import *
 import sys
 import time
 import datetime
-from time import monotonic
 
 
 baseValue = 0
