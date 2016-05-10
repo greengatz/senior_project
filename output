@@ -1977,3 +1977,15 @@ running 5 greedy search games with depth 3
 SCORE---max : 41155856   ---mean : 24534561   ---std : 21316491.5937
 TILE---max : 2048   ---mean : 972   ---std : 1373.84132999
 Ending run at 2016-05-09 02:41:07
+
+Starting run at 2016-05-10 00:00:01
+running 100 greedy search games with depth 2
+SCORE---max : 787752   ---mean : 327120   ---std : 1355100.73448
+TILE---max : 2048   ---mean : 678   ---std : 3079.99220778
+Ending run at 2016-05-10 00:34:33
+
+Starting run at 2016-05-10 00:34:33
+running 5 greedy search games with depth 3
+SCORE---max : 93768444   ---mean : 47651195   ---std : 52119331.0298
+TILE---max : 2048   ---mean : 1536   ---std : 1448.15468787
+Ending run at 2016-05-10 03:34:28
