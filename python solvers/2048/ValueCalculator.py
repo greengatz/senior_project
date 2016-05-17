@@ -9,13 +9,35 @@ import sys
 import time
 import datetime
 
-
+global baseValue
 baseValue = 0
+global mergeValue
 mergeValue = 2 # how much a single merge is worth
+global openSquareBonus
 openSquareBonus = 0.1 # how much an open square is worth
+global nonMonotonicMult
 nonMonotonicMult = 0.5 # multiplier applied to non-monotonic boards
+global nonMonotonicPenalty
 nonMonotonicPenalty = 1.5 # value reduced for a board being non-monotonic
+global largeOnEdgeBonus
 largeOnEdgeBonus = 0 # value bonus applied to boards with the largest tiles on the edges
+
+global test
+test = 1
+
+def setWeights(newWeights):
+    baseValue = newWeights[0]
+    print(str(newWeights[0]))
+    print(str(baseValue))
+    mergeValue = newWeights[1]
+    openSquareBonus = newWeights[2]
+    nonMonotonicMult = newWeights[3]
+    nonMonotonicPenalty = newWeights[4]
+    largeOnEdgeBonus = newWeights[5]
+    pass
+
+def getWeights():
+    return [baseValue, mergeValue, openSquareBonus, nonMonotonicMult, nonMonotonicPenalty, largeOnEdgeBonus]
 
 def isMonotonic(a, b, c, d):
     result = False
