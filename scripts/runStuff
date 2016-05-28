@@ -2,8 +2,9 @@
 #python python\ solvers/2048/mainDriver.py greedySearchNoRandom 50 4
 #python python\ solvers/2048/mainDriver.py greedySearchNoRandom 50 5
 
-python python\ solvers/2048/mainDriver.py greedySearch 100 2
-python python\ solvers/2048/mainDriver.py greedySearch 5 3
+#python python\ solvers/2048/mainDriver.py greedySearch 100 2
+#python python\ solvers/2048/mainDriver.py greedySearch 5 3
+python python\ solvers/2048/mainDriver.py greedySearch 1 4
 
 #python python\ solvers/2048/mainDriver.py greedySearchPercentageDepth 100 0.01
 #python python\ solvers/2048/mainDriver.py greedySearchPercentageDepth 20 0.005
