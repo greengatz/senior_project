@@ -34,7 +34,8 @@ def printRunData(tile, score, output):
     output.write("TILE")
     output.write("---max : " + str(tile.getMax()))
     output.write("   ---mean : " + str(tile.getMean()))
-    output.write("   ---std : " + str(tile.getStd()) + "\n")
+    output.write("   ---std : " + str(tile.getStd()))
+    output.write(tile.getHisto() + "\n")
     pass
 
 
