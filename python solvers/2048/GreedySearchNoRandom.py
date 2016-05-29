@@ -85,14 +85,7 @@ class GreedySearchNoRandom(object):
     'returns the number of matches that a given move would make'
     'this only determines value of one move and no further searching'
     def valueOfMove(self, board, move):
-        board = self.game.preRotate(move, board)
-        
-        value = 0
-        for x in range(0, 4):
-            value += self.game.countSlideDownMatches(x, board)
-        
-        board = self.game.postRotate(move, board)
-        return value
+        return value(self.game.preRotate(move, board), self.game, move)
     
     
     'returns the expected value of a given move searching with the given depth'
