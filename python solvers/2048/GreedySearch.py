@@ -58,7 +58,7 @@ class GreedySearch(object):
 #            self.game.printState(self.game.gameArray)
             self.numMoves = self.numMoves + 1
             if not wasSuccessful:
-		break
+                break
         
         self.game.printState(self.game.gameArray)
         print("number of moves in game: " + str(self.numMoves))
