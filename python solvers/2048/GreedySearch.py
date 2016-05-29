@@ -35,28 +35,34 @@ class GreedySearch(object):
     
     'keeps searching for moves until the game is complete'
     def playGame(self):
-        self.game.printState(self.game.gameArray)
+        #self.game.printState(self.game.gameArray)
         
         count = 0
         
         while (self.game.isGoing()):
-            print("\nStarting move: " + datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S'))
+            #print("\nStarting move: " + datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S'))
             testBoard = self.game.copyArr()
             
             bestMove = self.search(testBoard, self.depth)
-            print(bestMove[0])
+            #print(bestMove[0])
             
             
             # when at the end, all decisions might lead to an inevitable failure
-            if (not self.game.isValid(bestMove)):
-                pass
+          #  if (not self.game.isValid(bestMove)):
+           #     print("invalid best move")
+               # break
+	#	pass
             
             #self.game.printState(self.game.gameArray)
-            self.game.takeMove(bestMove[0])
-            self.game.printState(self.game.gameArray)
+            wasSuccessful = self.game.takeMove(bestMove[0])
+#            self.game.printState(self.game.gameArray)
             self.numMoves = self.numMoves + 1
+            if not wasSuccessful:
+		break
         
-        print(self.numMoves)
+        self.game.printState(self.game.gameArray)
+        print("number of moves in game: " + str(self.numMoves))
+        
         pass
     
     
@@ -82,35 +88,6 @@ class GreedySearch(object):
     'this only determines value of one move and no further searching'
     def valueOfMove(self, board, move):
         return value(self.game.preRotate(move, board), self.game, move)
-#         board = self.game.preRotate(move, board)
-#         testGame = GameState()
-#         testGame.setBoard(board)
-#         testGame.setBoard(testGame.copyArr())
-#         value = 0
-#         
-#         # store previous information
-#         oldScore = testGame.getScore()
-#         oldMaxTile = testGame.getMaxTile()
-#         
-#         testGame.executeMove(Move.down)
-#         newScore = testGame.getScore()
-#         value += newScore - oldScore
-#         
-#         # check if the largest tile is in a corner after the move
-#         newMaxTile = testGame.getMaxTile()
-#         for corner in self.fourCorners:
-#             if testGame.gameArray[corner[0]][corner[1]] == newMaxTile:
-#                 value *= self.maxInCornerMultiplier
-#                 value += self.cornerBonusScaledByMax * newMaxTile
-#                 value += self.enterCorner
-#         
-#         # penalty for moving down
-#         if move == Move.down:
-#             value -= self.moveDownPenalty * newMaxTile
-#         
-#         board = self.game.postRotate(move, board)
-#         return value
-    
     
     'returns the expected value of a given move searching with the given depth'
     def searchDirection(self, board, depth, move):
@@ -142,7 +119,7 @@ class GreedySearch(object):
                     options += 1
                     
                     trialBoard[x][y] = 2
-                    ev2[x][y] = self.search(trialBoard, depth - 1)[1] # TODO adjust
+                    ev2[x][y] = self.search(trialBoard, depth - 1)[1]
                     trialBoard[x][y] = 0
                     
                     trialBoard[x][y] = 4

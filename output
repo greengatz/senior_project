@@ -2061,3 +2061,153 @@ running 5 greedy search games with depth 3
 SCORE---max : 35152536   ---mean : 26786664   ---std : 9668028.489
 TILE---max : 2048   ---mean : 1126   ---std : 1121.73615436
 Ending run at 2016-05-16 02:59:25
+
+Starting run at 2016-05-17 00:00:02
+running 100 greedy search games with depth 2
+SCORE---max : 641736   ---mean : 326740   ---std : 1378856.20628
+TILE---max : 2048   ---mean : 711   ---std : 3368.71785699
+Ending run at 2016-05-17 00:35:43
+
+Starting run at 2016-05-17 00:35:43
+running 5 greedy search games with depth 3
+SCORE---max : 38042880   ---mean : 27387364   ---std : 13707730.2113
+TILE---max : 2048   ---mean : 1228   ---std : 915.89519051
+Ending run at 2016-05-17 03:00:49
+
+Starting run at 2016-05-18 00:00:02
+running 100 greedy search games with depth 2
+SCORE---max : 630524   ---mean : 304374   ---std : 1174275.79419
+TILE---max : 2048   ---mean : 711   ---std : 3188.8261163
+Ending run at 2016-05-18 00:35:36
+
+Starting run at 2016-05-18 00:35:36
+running 5 greedy search games with depth 3
+SCORE---max : 40854292   ---mean : 32069255   ---std : 10136045.2864
+TILE---max : 2048   ---mean : 1228   ---std : 915.89519051
+Ending run at 2016-05-18 03:19:45
+
+Starting run at 2016-05-19 00:00:02
+running 100 greedy search games with depth 2
+SCORE---max : 628892   ---mean : 337017   ---std : 1243859.19283
+TILE---max : 1024   ---mean : 734   ---std : 2796.27466462
+Ending run at 2016-05-19 00:36:04
+
+Starting run at 2016-05-19 00:36:04
+running 5 greedy search games with depth 3
+SCORE---max : 64667516   ---mean : 32818264   ---std : 37937661.9421
+TILE---max : 2048   ---mean : 1075   ---std : 1274.86979727
+Ending run at 2016-05-19 02:58:17
+
+Starting run at 2016-05-20 00:00:01
+running 100 greedy search games with depth 2
+SCORE---max : 942476   ---mean : 292033   ---std : 1256858.02913
+TILE---max : 2048   ---mean : 688   ---std : 3578.42423421
+Ending run at 2016-05-20 00:33:56
+
+Starting run at 2016-05-20 00:33:56
+running 5 greedy search games with depth 3
+SCORE---max : 42820240   ---mean : 29327474   ---std : 18608362.0295
+TILE---max : 2048   ---mean : 1638   ---std : 1121.73615436
+Ending run at 2016-05-20 03:28:04
+
+Starting run at 2016-05-21 00:00:01
+running 100 greedy search games with depth 2
+SCORE---max : 795060   ---mean : 307461   ---std : 1335433.86689
+TILE---max : 2048   ---mean : 700   ---std : 3189.51281546
+Ending run at 2016-05-21 00:35:21
+
+Starting run at 2016-05-21 00:35:21
+running 5 greedy search games with depth 3
+SCORE---max : 40895636   ---mean : 30796696   ---std : 13597883.6292
+TILE---max : 2048   ---mean : 1228   ---std : 915.89519051
+Ending run at 2016-05-21 03:09:23
+
+Starting run at 2016-05-22 00:00:01
+running 100 greedy search games with depth 2
+SCORE---max : 772284   ---mean : 315906   ---std : 1361357.76172
+TILE---max : 2048   ---mean : 712   ---std : 3304.57137917
+Ending run at 2016-05-22 00:34:59
+
+Starting run at 2016-05-22 00:34:59
+running 5 greedy search games with depth 3
+SCORE---max : 52290836   ---mean : 34045361   ---std : 26405355.6452
+TILE---max : 2048   ---mean : 1433   ---std : 1121.7366001
+Ending run at 2016-05-22 03:18:40
+
+Starting run at 2016-05-23 00:00:02
+running 100 greedy search games with depth 2
+SCORE---max : 651132   ---mean : 304721   ---std : 1127298.32263
+TILE---max : 2048   ---mean : 683   ---std : 3172.85549624
+Ending run at 2016-05-23 00:34:58
+
+Starting run at 2016-05-23 00:34:58
+running 5 greedy search games with depth 3
+SCORE---max : 53062124   ---mean : 36332912   ---std : 21301762.5736
+TILE---max : 2048   ---mean : 1638   ---std : 1121.73615436
+Ending run at 2016-05-23 03:28:39
+
+Starting run at 2016-05-24 00:00:02
+running 100 greedy search games with depth 2
+SCORE---max : 1549296   ---mean : 333267   ---std : 1986624.68416
+TILE---max : 1024   ---mean : 678   ---std : 2760.17680593
+Ending run at 2016-05-24 00:33:53
+
+Starting run at 2016-05-24 00:33:53
+running 5 greedy search games with depth 3
+SCORE---max : 42961080   ---mean : 31394056   ---std : 13392307.7502
+TILE---max : 2048   ---mean : 1228   ---std : 915.89519051
+Ending run at 2016-05-24 03:14:25
+
+Starting run at 2016-05-25 00:00:02
+running 100 greedy search games with depth 2
+SCORE---max : 895448   ---mean : 317527   ---std : 1350356.22434
+TILE---max : 1024   ---mean : 704   ---std : 2742.30851656
+Ending run at 2016-05-25 00:35:28
+
+Starting run at 2016-05-25 00:35:28
+running 5 greedy search games with depth 3
+SCORE---max : 48935676   ---mean : 32675330   ---std : 23550018.6867
+TILE---max : 2048   ---mean : 1126   ---std : 1121.73615436
+Ending run at 2016-05-25 03:06:55
+
+Starting run at 2016-05-26 00:00:01
+running 100 greedy search games with depth 2
+SCORE---max : 1157864   ---mean : 342144   ---std : 1612188.27222
+TILE---max : 2048   ---mean : 727   ---std : 3087.32181672
+Ending run at 2016-05-26 00:35:32
+
+Starting run at 2016-05-26 00:35:32
+running 5 greedy search games with depth 3
+SCORE---max : 50928648   ---mean : 35075252   ---std : 23929204.3687
+TILE---max : 2048   ---mean : 1126   ---std : 1121.73615436
+Ending run at 2016-05-26 03:14:51
+
+Starting run at 2016-05-27 00:00:02
+running 100 greedy search games with depth 2
+SCORE---max : 614724   ---mean : 319333   ---std : 1251939.63586
+TILE---max : 2048   ---mean : 700   ---std : 3127.26334037
+Ending run at 2016-05-27 00:35:07
+
+Starting run at 2016-05-27 00:35:07
+running 5 greedy search games with depth 3
+SCORE---max : 63982504   ---mean : 37419289   ---std : 35362214.5432
+TILE---max : 2048   ---mean : 1126   ---std : 1121.73615436
+Ending run at 2016-05-27 03:02:07
+
+Starting run at 2016-05-27 13:19:51
+running 5 greedy search games with depth 3
+SCORE---max : 41878780   ---mean : 33839815   ---std : 20150171.9637
+TILE---max : 2048   ---mean : 1536   ---std : 1448.15468787
+Ending run at 2016-05-27 16:24:18
+
+Starting run at 2016-05-27 16:24:18
+running 4 greedy search games with depth 1
+SCORE---max : 3688   ---mean : 2958   ---std : 1335.22732147
+TILE---max : 256   ---mean : 224   ---std : 110.851251684
+Ending run at 2016-05-27 16:24:19
+
+Starting run at 2016-05-27 20:39:14
+
+Starting run at 2016-05-28 00:00:01
+
+Starting run at 2016-05-29 00:00:02

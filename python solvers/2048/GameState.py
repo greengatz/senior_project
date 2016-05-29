@@ -78,11 +78,11 @@ class GameState(object):
     def takeMove (self, move):
         if not self.isValid(move):
             print("invalid move chosen")
-            return
+            return False
         
         self.gameArray = self.executeMove(move)
         self.addRandomTile()
-        return
+        return True
     
     
     'creates a copy of our game state'
