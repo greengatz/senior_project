@@ -7,6 +7,7 @@ Created on Feb 6, 2016
 from GameState import GameState
 from random import randint
 from Directions import *
+from ValueCalculator import value
 import time
 import datetime
 

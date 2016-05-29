@@ -6,6 +6,7 @@ Created on Feb 6, 2016
 
 from GameState import GameState
 from random import randint
+from ValueCalculator import value
 from Directions import *
 
 class GreedySearchNoRandom(object):
