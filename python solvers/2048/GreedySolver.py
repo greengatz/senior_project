@@ -1,9 +1,3 @@
-'''
-Created on Feb 1, 2016
-
-@author: John_2
-'''
-
 from GameState import GameState
 from random import randint
 from Directions import *
@@ -12,9 +6,6 @@ import time
 import datetime
 
 class GreedySolver(object):
-    '''
-    classdocs
-    '''
     fourCorners = {(0, 0), (0, 3), (3, 0), (3, 3)}
     possibilities = {Move.down, Move.left, Move.up, Move.right}
     
@@ -24,12 +15,8 @@ class GreedySolver(object):
 
 
     def __init__(self):
-        '''
-        Constructor
-        '''
         self.game = GameState()
         self.numMoves = 0
-        print("test")
         pass
     
     def playGame(self):

@@ -1,22 +1,9 @@
-'''
-Created on March 6, 2016
-
-@author: John_2
-'''
-
 import math
 from ast import increment_lineno
 
 class DataGroup(object):
-    '''
-    classdocs
-    '''
-
 
     def __init__(self):
-        '''
-        Constructor
-        '''
         self.values = []
         self.histo = []
         pass

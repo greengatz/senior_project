@@ -1,9 +1,3 @@
-'''
-predicts value based on assuming what region of the board the next tile will appear in
-
-@author: John_2
-'''
-
 from GameState import GameState
 from random import randint
 from random import randrange

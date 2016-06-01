@@ -1,8 +1,3 @@
-'''
-Created on Feb 1, 2016
-
-@author: John_2
-'''
 from GameState import GameState
 from random import randint
 from Directions import *
@@ -88,11 +83,6 @@ class SearchSolver(object):
                         pretendGame4 = None
                     
                         pass
-            
-            # TODO adjust per cell for likelihood
-            
-            # TODO average the per cell evs together to find move ev
-
         return ev
     
     

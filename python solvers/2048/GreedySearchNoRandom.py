@@ -1,24 +1,11 @@
-'''
-Created on Feb 6, 2016
-
-@author: John_2
-'''
-
 from GameState import GameState
 from random import randint
 from ValueCalculator import value
 from Directions import *
 
 class GreedySearchNoRandom(object):
-    '''
-    classdocs
-    '''
-
 
     def __init__(self, inDepth):
-        '''
-        Constructor
-        '''
         self.game = GameState()
         self.numMoves = 0
         self.depth = inDepth
@@ -105,9 +92,6 @@ class GreedySearchNoRandom(object):
         
         # using that as the starting board, check the child's options
         afterMove = testGame.executeMove(move)
-        #testGame.setBoard(afterMove)
-        
-        #trialBoard = testGame.copyArr()
         searchValue = self.search(afterMove, depth - 1)[1]
         
         return ourValue + searchValue

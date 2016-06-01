@@ -1,9 +1,3 @@
-'''
-Created on Feb 6, 2016
-
-@author: John_2
-'''
-
 from GameState import GameState
 from random import randint
 from Directions import *
@@ -165,9 +159,6 @@ class SearchRandomComparison(object):
             for y in range (0, 4):
                 searchValue += (ev2[x][y] * 0.9) / options
                 searchValue += (ev4[x][y] * 0.1) / options
-        
-        #print("ev of move " + str(move))
-        #self.game.printState(ev2)
         
         return ourValue + searchValue
     

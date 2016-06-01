@@ -1,8 +1,3 @@
-'''
-
-@author: John_2
-'''
-
 import cma
 from numpy import ndarray
 from numpy import array

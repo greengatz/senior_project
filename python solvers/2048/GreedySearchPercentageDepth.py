@@ -1,12 +1,8 @@
 '''
-Created on April 4, 2016
-
 percentage guidelines: 
 1.5% -> 40 possibilites searched
 0.5% -> 80 possibilites searched - quick, 1 minute total
 0.2% -> 350 possibilites searched - pretty quick, 2 seconds per move
-
-@author: John
 '''
 
 from GameState import GameState
@@ -16,9 +12,6 @@ import time
 import datetime
 
 class GreedySearchPercentageDepth(object):
-    '''
-    classdocs
-    '''
     minimumDepth = 2
     
     fourCorners = {(0, 0), (0, 3), (3, 0), (3, 3)}
@@ -32,9 +25,6 @@ class GreedySearchPercentageDepth(object):
 
 
     def __init__(self, threshold):
-        '''
-        Constructor
-        '''
         self.game = GameState()
         self.numMoves = 0
         self.threshold = threshold
@@ -169,9 +159,6 @@ class GreedySearchPercentageDepth(object):
                     trialBoard[x][y] = 4
                     ev4[x][y] = cellChance * 0.9 * self.search(trialBoard, likelihood * cellChance * 0.1, depth)[1]
                     trialBoard[x][y] = 0
-        
-        #print("ev of move " + str(move))
-        #self.game.printState(ev2)
         
         return ourValue + searchValue
     

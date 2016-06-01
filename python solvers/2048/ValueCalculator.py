@@ -1,8 +1,3 @@
-'''
-
-@author: John_2
-'''
-
 from GameState import *
 from Directions import * 
 import sys

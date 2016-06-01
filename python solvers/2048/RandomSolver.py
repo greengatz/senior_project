@@ -1,8 +1,3 @@
-'''
-Created on Jan 18, 2016
-
-@author: John_2
-'''
 from GameState import GameState
 from random import randint
 from Directions import *

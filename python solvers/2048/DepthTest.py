@@ -1,6 +1,4 @@
 '''
-Created on Jan 11, 2016
-
 This depth test goes for 65535 moves, which is the max possible board with only getting 4s
 
 128k 64k 32k 16k
@@ -17,8 +15,6 @@ Results:
     -this should be more than enough memory
 
 TL;DR: Memory is fine, needs to be run in a new thread, the bottleneck is computation
-
-@author: John_2
 '''
 
 from GameState import GameState
