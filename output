@@ -2211,3 +2211,121 @@ Starting run at 2016-05-27 20:39:14
 Starting run at 2016-05-28 00:00:01
 
 Starting run at 2016-05-29 00:00:02
+
+Starting run at 2016-05-29 09:27:25
+running 50 greedy search without factoring randomization games with depth 3
+
+Starting run at 2016-05-29 09:27:25
+running 50 greedy search without factoring randomization games with depth 4
+
+Starting run at 2016-05-29 09:27:25
+running 50 greedy search without factoring randomization games with depth 5
+
+Starting run at 2016-05-29 09:27:25
+running 100 greedy search games with depth 2
+
+Starting run at 2016-05-29 09:29:44
+running 100 region-based search games with depth 2
+
+Starting run at 2016-05-29 09:29:44
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 8
+
+Starting run at 2016-05-29 09:31:24
+running 50 greedy search without factoring randomization games with depth 3
+
+Starting run at 2016-05-29 09:31:24
+running 50 greedy search without factoring randomization games with depth 4
+
+Starting run at 2016-05-29 09:31:24
+running 50 greedy search without factoring randomization games with depth 5
+
+Starting run at 2016-05-29 09:31:24
+running 100 greedy search games with depth 2
+
+Starting run at 2016-05-29 09:31:27
+running 100 region-based search games with depth 2
+
+Starting run at 2016-05-29 09:31:27
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 8
+
+Starting run at 2016-05-29 09:32:11
+running 50 greedy search without factoring randomization games with depth 3
+
+Starting run at 2016-05-29 09:32:11
+running 50 greedy search without factoring randomization games with depth 4
+
+Starting run at 2016-05-29 09:32:11
+running 50 greedy search without factoring randomization games with depth 5
+
+Starting run at 2016-05-29 09:32:11
+running 100 greedy search games with depth 2
+
+Starting run at 2016-05-29 09:32:12
+running 100 region-based search games with depth 2
+
+Starting run at 2016-05-29 09:32:12
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 8
+
+Starting run at 2016-05-29 09:32:23
+running 50 greedy search without factoring randomization games with depth 3
+SCORE---max : 246608   ---mean : 113105   ---std : 293124.119898
+TILE---max : 2048   ---mean : 860   ---std : 2604.666581352048-3
+1024-40
+256-6
+512-22
+
+Ending run at 2016-05-29 09:41:27
+
+Starting run at 2016-05-29 09:41:27
+running 50 greedy search without factoring randomization games with depth 4
+SCORE---max : 539364   ---mean : 245724   ---std : 826417.576454
+TILE---max : 2048   ---mean : 765   ---std : 3359.800291682048-7
+128-1
+256-13
+1024-28
+512-34
+
+Ending run at 2016-05-29 10:01:59
+
+Starting run at 2016-05-29 10:01:59
+running 50 greedy search without factoring randomization games with depth 5
+SCORE---max : 1542632   ---mean : 492211   ---std : 1536007.1968
+TILE---max : 1024   ---mean : 573   ---std : 1601.18018974256-10
+1024-16
+512-44
+
+Ending run at 2016-05-29 10:43:38
+
+Starting run at 2016-05-29 10:43:38
+running 100 greedy search games with depth 2
+SCORE---max : 561832   ---mean : 299161   ---std : 1055666.63486
+TILE---max : 1024   ---mean : 648   ---std : 2764.66851539128-1
+1024-51
+256-20
+512-74
+
+Ending run at 2016-05-29 11:52:14
+
+Starting run at 2016-05-29 11:52:14
+running 100 region-based search games with depth 2
+
+Starting run at 2016-05-29 11:52:14
+running 10 search comparisons with depth 2
+the required number of 0s for a comparison is 8
+SCORE---max : 442980   ---mean : 303166   ---std : 343908.069728
+TILE---max : 2048   ---mean : 793   ---std : 1555.082634462048-1
+256-1
+512-8
+1024-5
+
+comparisons: 1726
+disagreements: 1593
+Ending run at 2016-05-29 12:00:19
+
+5 greedy depth 3
+512
+1024
+2048-3
