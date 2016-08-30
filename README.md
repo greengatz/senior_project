@@ -6,7 +6,7 @@ Project notes:
 This code was written for python 2.7, and was developed in eclipse using pydev.
 
 Dependencies:
-enum (if python 2.7)
+enum
 numpy
 Robert Xiao's CMA-ES implementation: https://www.lri.fr/~hansen/cmaes_inmatlab.html#python
   -this is only required for the heuristic optimizer
